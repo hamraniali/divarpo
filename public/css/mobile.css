@@ -1,0 +1,11 @@
+@media(max-width: 768px) {
+    .section-search{
+        display: none;
+    }
+    .logo{
+        height: 31px;
+    }
+    /*.box-agahi{*/
+        /*border-radius: 150rem;*/
+    /*}*/
+}

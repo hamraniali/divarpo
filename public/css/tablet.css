@@ -1,0 +1,8 @@
+@media(max-width: 1024px) {
+    .search-select{
+        font-size: 14px !important;
+    }
+    .box-search{
+        font-size: 14px !important;
+    }
+}
