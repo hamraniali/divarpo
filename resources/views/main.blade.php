@@ -1,3 +1,29 @@
+{{--                       #
+                          ali
+                         #####
+                        ########
+                       ##########
+                      ############
+                     ##############
+                    ################
+                   ##################
+                  ####################
+                 ######################
+                ######             ######
+               ###########################
+              #############################
+             ###############################
+            ##########             ##########
+           ###########             ###########
+          ############             ############
+         #############             #############
+        ##############             ##############
+       ###############             ###############
+      ################             ################
+     #################             #################
+    ##################             ##################--}}
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,15 +94,15 @@
             <nav class="mdc-list">
                 <a class="mdc-list-item mdc-list-item--activated my-font" href="#" aria-current="page">
                     <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
-                    <span class="mdc-list-item__text">صفحه اصلی</span>
+                    <span class="mdc-list-item__text new-a">صفحه اصلی</span>
                 </a>
                 <a class="mdc-list-item my-font" href="#">
                     <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>
-                    <span class="mdc-list-item__text">اضافه کردن آگهی</span>
+                    <span class="mdc-list-item__text new-a">اضافه کردن آگهی</span>
                 </a>
                 <a class="mdc-list-item my-font" href="#">
                     <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
-                    <span class="mdc-list-item__text">لوازم من</span>
+                    <span class="mdc-list-item__text new-a">لوازم من</span>
                 </a>
             </nav>
         </div>
@@ -88,6 +114,29 @@
     <br>
     <br>
     <div>
+        <div class="container">
+            <div class="box-filter-search">
+                <input placeholder="جستوجو..." type="text" style="border-radius: 5px;width: 100%;height: 45px;background-color: white;border: 1px solid #e0e0e0;padding: 10px;direction: rtl;">
+                <div style="display: flow-root;margin-top: 10px;width: 100%">
+                    <select name="filter" id="fliter" class="filter-select" style="border-radius: 5px !important;float: right!important;margin: 0 !important;">
+                        <option value="" selected>شهر</option>
+                        <option value="">شهر</option>
+                        <option value="">شهر</option>
+                        <option value="">شهر</option>
+                    </select>
+                    <select name="filter" id="fliter" class="filter-select" style="border-radius: 5px !important;float: left!important;">
+                        <option value="" selected>دسته</option>
+                        <option value="">دسته</option>
+                        <option value="">دسته</option>
+                        <option value="">دسته</option>
+                    </select>
+                </div>
+                <div style="width: 100%;height: 40px;margin-top: 10px;">
+                    <button style="width: 100%;height: 100%;color: white;font-size: 16px;border: none;border-radius: 150rem" class="blue-color-back my-font btn-ripple mdc-ripple-surface">ثبت فیلتر</button>
+                </div>
+            </div>
+        </div>
+        <br>
         <div class="container">
 
             <div class="box-filter my-font">
@@ -115,20 +164,22 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="card" style="margin-top: 10px">
                         <div class="card-body box-agahi box-agahi-title">
-                            <div style="width: 100%;height: 150px;display: inline-flex;background-color: #9e9e9e">
-                                <div style="width: 50%;height: 100%;border-bottom: solid 1px #e0e0e0;background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg')"></div>
-                                <div style="width: 50%;height: 100%;background-color: white;border-bottom: 1px #e0e0e0 solid;padding: 7px;text-align: right;direction: rtl">
-                                <span style="font-size: 16px;font-weight: bold">
+                            <a href="#">
+                                <div style="width: 100%;height: 150px;display: inline-flex;background-color: #9e9e9e">
+                                    <div style="width: 50%;height: 100%;border-bottom: solid 1px #e0e0e0;background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg')"></div>
+                                    <div style="width: 50%;height: 100%;background-color: white;border-bottom: 1px #e0e0e0 solid;padding: 7px;text-align: right;direction: rtl">
+                                <span style="font-size: 16px;font-weight: bold" class="black-color">
 ظبط ماشین خارجی
                                 </span>
-                                    <div style="    position: absolute;
+                                        <div style="position: absolute;
     bottom: 59px;">
-                                        <span style="font-size: 15px;">امانیه</span>
-                                        <br>
-                                        <span style="color: #9e9e9e;font-size: 12px;">لحظاتی گذشته</span>
+                                            <span style="font-size: 15px;" class="black-color">امانیه</span>
+                                            <br>
+                                            <span style="color: #9e9e9e;font-size: 12px;">لحظاتی گذشته</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                             <div style="width: 100%;height: 47px;direction: rtl;padding: 7px;line-height: 37px">
                                 <span>قیمت : </span><span style="font-weight: bold;color: #ef5661">230.000</span>
                                 <button class="material-icons mdc-icon-button" style="float: left;    position: relative;
@@ -141,6 +192,14 @@
             @endfor
         </div>
     </div>
+
+<div class="container" style="text-align: center">
+    <button class="my-font btn-ripple mdc-ripple-surface btn-sabt my-font bold-font" style="border: none;border: 2px solid rgb(0, 191, 214) !important;background-color: #f5f5f5;color: rgb(0, 191, 214) !important;">
+         <i class="material-icons" style="    position: relative;
+    top: 9px;">expand_more
+         </i>نمایش همه آگهی ها
+    </button>
+</div>
 
 
 </body>
