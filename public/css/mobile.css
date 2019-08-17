@@ -39,4 +39,10 @@
         bottom: 10px;
         z-index: 1000;
     }
+    .box-filter-search{
+        display: block;
+    }
+    .space-mob{
+        display: block;
+    }
 }

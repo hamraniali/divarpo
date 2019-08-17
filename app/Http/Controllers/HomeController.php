@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Advertising;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('main');
+        $advertisings = Advertising::active()->paginate(20);
+        return view('pages.index' , compact('advertisings'));
+    }
+
+    public function search(Request $request)
+    {
+        $advertisings = Advertising::active()->search($request->all())->paginate(20);
+        return view('pages.search' , compact('advertisings'));
     }
 }
