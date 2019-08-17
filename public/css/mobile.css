@@ -18,4 +18,25 @@
         padding: 10px;
         border-radius: 5px;
     }
+    .desk-add{
+        display: none;
+    }
+    .filter-select{
+        padding: 6px 30px;
+    }
+    .desk-head{
+        display: none;
+    }
+    .mobile-head{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .floating-action-btn{
+        display: block;
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        z-index: 1000;
+    }
 }
