@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div style="width: 100%;height: 40px;margin-top: 10px;">
-                    <button type="submit" style="width: 100%;height: 100%;color: white;font-size: 16px;border: none;border-radius: 150rem" class="blue-color-back my-font btn-ripple mdc-ripple-surface">ثبت فیلتر</button>
+                    <button type="submit" style="width: 100%;height: 100%;color: white;font-size: 16px;border: none;border-radius: 150rem" class="blue-shadow blue-color-back my-font btn-ripple mdc-ripple-surface">ثبت فیلتر</button>
                 </div>
             </div>
         </form>

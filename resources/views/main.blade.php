@@ -93,10 +93,6 @@
     close2.addEventListener('click', (event) => {
         drawer2.open = false;
     });
-
-    document.body.addEventListener('MDCDrawer:closed', () => {
-        mainContentEl.querySelector('input, button').focus();
-    });
 </script>
 <script type="text/javascript">
     const buttons = document.querySelectorAll('.mdc-list-item,.btn-ripple,button,a');

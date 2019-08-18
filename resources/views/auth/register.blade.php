@@ -2,12 +2,14 @@
 
 @section('content')
     <div class="container" dir="rtl">
-        <div style="direction: rtl;width: 100%;height: auto;padding: 30px;background-color: white;border: 1px solid #e0e0e0;box-shadow: 3px 3px 3px #e0e0e0">
+        <div style="direction: rtl;width: 100%;height: auto;padding: 30px;display: inline-block;background-color: white;border: 1px solid #e0e0e0;box-shadow: 0px 0px 8px #e0e0e0">
+            <h2 class="bold-font">فرم ثبت نام</h2>
+            <hr>
             <form action="{{ route('register') }}" method="POST">
                 @csrf
-                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon">
+                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12" style="height: 48px;float: right;margin-top: 10px">
                     <i class="material-icons mdc-text-field__icon">person</i>
-                    <input type="text" id="text-field-outlined-leading" style="font-size: 16px" class="my-font mdc-text-field__input" aria-describedby="text-field-outlined-leading-helper-text">
+                    <input type="text" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="نام خود را وارد کنید..." aria-describedby="text-field-outlined-leading-helper-text">
                     <div class="mdc-notched-outline mdc-notched-outline--upgraded">
                         <div class="mdc-notched-outline__leading">
 
@@ -19,6 +21,50 @@
 
                         </div>
                     </div>
+                </div>
+                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 form-set" style="float: right;margin-top: 10px;height: 48px">
+                    <i class="material-icons mdc-text-field__icon">people</i>
+                    <input type="text" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="نام خانوادگی خود را وارد کنید..." aria-describedby="text-field-outlined-leading-helper-text">
+                    <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                        <div class="mdc-notched-outline__leading">
+
+                        </div>
+                        <div class="mdc-notched-outline__notch" style="">
+                            {{--<label class="mdc-floating-label my-font" for="text-field-outlined-leading" style="font-size: 24px;font-weight: bold">نام:</label>--}}
+                        </div>
+                        <div class="mdc-notched-outline__trailing">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12" style="height: 48px;float: right;margin-top: 10px">
+                    <i class="material-icons mdc-text-field__icon">phone</i>
+                    <input type="text" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="شماره تلفن خود را وارد کنید..." aria-describedby="text-field-outlined-leading-helper-text">
+                    <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                        <div class="mdc-notched-outline__leading">
+
+                        </div>
+                        <div class="mdc-notched-outline__notch" style="">
+                            {{--<label class="mdc-floating-label my-font" for="text-field-outlined-leading" style="font-size: 24px;font-weight: bold">نام:</label>--}}
+                        </div>
+                        <div class="mdc-notched-outline__trailing">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mdc-text-field mdc-text-field--textarea col-lg-5 col-md-5 col-sm-12 col-xs-12 form-set" style="margin-top: 10px;float: right">
+                    <i class="material-icons mdc-text-field__icon" style="top: 10px;position: relative">location_on</i>
+                    <textarea id="textarea" style="font-size: 16px;margin-right: 30px;border: none;width: 100%;margin-top: 12px;" class="my-font" placeholder="آدرس خود را وارد کنید..." rows="8" cols="40"></textarea>
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+                <div class="mdc-text-field mdc-text-field--textarea col-lg-5 col-md-5 col-sm-12 col-xs-12 form-set" style="margin-top: 20px;float: right;justify-content:space-around">
+                    <button type="submit" style="width: 199px;height: 45px;color: white;font-size: 16px;border: none;border-radius: 5px;font-weight: bold" class="blue-shadow blue-color-back my-font btn-ripple mdc-ripple-surface">ثبت فیلتر</button>
                 </div>
             </form>
         </div>

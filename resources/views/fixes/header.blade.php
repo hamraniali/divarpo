@@ -66,12 +66,12 @@
             </form>
         </section>
 
-        <a href="{{ route('createad') }}" class="my-font blue-color-back btn-ripple mdc-ripple-surface btn-sabt my-font bold-font desk-add" style="float: left">ثبت رایگان آگهی</a>
+        <a href="{{ route('createad') }}" class="my-font blue-color-back btn-ripple mdc-ripple-surface btn-sabt my-font bold-font desk-add blue-shadow" style="float: left">ثبت رایگان آگهی</a>
         <button class="material-icons mdc-icon-button bold-font menu-btn btn-profile" data-mdc-ripple-is-unbounded="true" style="color: black;margin-top: 7px;margin-right: 15px;position: absolute;left: 10px">person</button>
     </div>
 </header>
 <a href="{{ route('createad') }}">
-    <button class="mdc-fab mdc-fab blue-color-back floating-action-btn">
+    <button class="mdc-fab mdc-fab blue-color-back floating-action-btn blue-shadow">
         <span class="material-icons mdc-fab__icon">add</span>
     </button>
 </a>
@@ -95,10 +95,22 @@
                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>
                 <span class="mdc-list-item__text new-a">اضافه کردن آگهی</span>
             </a>
-            <a class="mdc-list-item my-font" href="#!">
-                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
-                <span class="mdc-list-item__text new-a">لوازم من</span>
-            </a>
+            @if(auth()->check())
+                <a class="mdc-list-item my-font" href="#!">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
+                    <span class="mdc-list-item__text new-a">لوازم من</span>
+                </a>
+            @else
+                <a class="mdc-list-item my-font" href="{{ route('login') }}">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
+                    <span class="mdc-list-item__text new-a">ورود</span>
+                </a>
+                <a class="mdc-list-item my-font" href="{{ route('register') }}">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person_add</i>
+                    <span class="mdc-list-item__text new-a">ثبت نام</span>
+                </a>
+            @endif
+
         </nav>
     </div>
 </aside>
@@ -117,10 +129,10 @@
                 <span class="mdc-list-item__text new-a">ورود</span>
             </a>
             <a class="mdc-list-item my-font" href="{{ route('register') }}">
-                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person_add</i>
                 <span class="mdc-list-item__text new-a">ثبت نام</span>
             </a>
         </nav>
     </div>
 </aside>
-{{--<div class="mdc-drawer-scrim"></div>--}}
+<div class="mdc-drawer-scrim" style="display: none;"></div>
