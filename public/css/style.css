@@ -167,3 +167,40 @@ input:focus, textarea:focus, select:focus,button:focus{
  .grey-color{
      color: #5a6268;
  }
+
+[type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+
+[type="file"] + label {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 8px #e0e0e0;
+    border-radius: 4rem;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 2rem 4rem;
+    border: 3px dashed #9e9e9e;
+    text-align: center;
+    line-height: 95px!important;
+    font-size: 30px !important;
+}
+
+[type="file"]:focus + label,
+[type="file"] + label:hover {
+    border: 3px dashed rgb(0, 191, 214)!important;
+}
+
+[type="file"]:focus + label {
+    outline: 1px dotted #000;
+}
+.buti-border{
+    border-right: 5px solid rgb(0, 191, 214);
+}

@@ -61,6 +61,7 @@
     const mainContentEl = document.querySelector('.main-content');
     const mobEl2 = document.querySelector('.btn-profile');
     const close2 = document.querySelector('.btn-profile-close');
+    // const otherScreen = document.querySelector('.mdc-drawer-scrim"');
 
     listEl.addEventListener('click', (event) => {
         if (drawer2.open === true) {
@@ -77,6 +78,9 @@
     close.addEventListener('click', (event) => {
         drawer.open = false;
     });
+    // otherScreen.addEventListener('click', (event) => {
+    //     drawer2.open = false;
+    // });
 
     document.body.addEventListener('MDCDrawer:closed', () => {
         mainContentEl.querySelector('input, button').focus();

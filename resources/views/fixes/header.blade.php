@@ -114,6 +114,7 @@
         </nav>
     </div>
 </aside>
+<div class="mdc-drawer-scrim"></div>
 
 <aside class="mdc-drawer mdc-drawer--modal drawer-left" dir="ltr" style="box-shadow: none !important;border-left:none;border-top:none;border-bottom:none ">
     <div class="mdc-drawer__header">
@@ -135,4 +136,4 @@
         </nav>
     </div>
 </aside>
-<div class="mdc-drawer-scrim" style="display: none;"></div>
+<div class="mdc-drawer-scrim"></div>

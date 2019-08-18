@@ -79,28 +79,28 @@
     margin-top: 10px;">
 
         @if(count($advertisings) > 0)
-            @foreach($advertisings as $adveriting)
+            @foreach($advertisings as $advertising)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="card" style="margin-top: 10px">
                         <div class="card-body box-agahi box-agahi-title">
-                            <a href="#!">
+                            <a href="{{ route('advertising' , ['id' => $advertising->id]) }}">
                                 <div style="width: 100%;height: 150px;display: inline-flex;background-color: #9e9e9e">
                                     <div style="width: 50%;height: 100%;border-bottom: solid 1px #e0e0e0;background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg')"></div>
                                     <div style="width: 50%;height: 100%;background-color: white;border-bottom: 1px #e0e0e0 solid;padding: 7px;text-align: right;direction: rtl">
                                 <span style="font-size: 16px;font-weight: bold" class="black-color">
-{{ $adveriting->name }}
+{{ $advertising->name }}
                                 </span>
                                         <div style="position: absolute;
     bottom: 59px;">
-                                            <span style="font-size: 15px;" class="black-color">{{ $adveriting->city }}</span>
+                                            <span style="font-size: 15px;" class="black-color">{{ $advertising->city }}</span>
                                             <br>
-                                            <span style="color: #9e9e9e;font-size: 12px;">{{ $adveriting->created_at }}</span>
+                                            <span style="color: #9e9e9e;font-size: 12px;">{{ $advertising->created_at }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                             <div style="width: 100%;height: 47px;direction: rtl;padding: 7px;line-height: 37px">
-                                <span>قیمت : </span><span style="font-weight: bold;color: #ef5661">{{ $adveriting->price }} ریال </span>
+                                <span>قیمت : </span><span style="font-weight: bold;color: #ef5661">{{ $advertising->price }} ریال </span>
                                 <button class="material-icons mdc-icon-button" style="float: left;    position: relative;
     bottom: 7px;" data-mdc-ripple-is-unbounded="true">bookmark_border
                                 </button>

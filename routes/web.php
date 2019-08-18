@@ -15,5 +15,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/search' , 'HomeController@search')->name('search');
 Route::get('/createAdvertising' , 'AdvertisingController@create')->name('createad');
+Route::get('/advertising/{id}' , 'AdvertisingController@show')->name('advertising');
+Route::post('/createAdvertising' , 'AdvertisingController@store')->name('createAdvertising');
 
 

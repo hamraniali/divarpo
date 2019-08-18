@@ -51,4 +51,10 @@
     .form-set{
         margin-right: 0px!important;
     }
+    .form-camera{
+        margin-top: 20px;
+    }
+    .form-camera-set{
+        margin-top: 10px;
+    }
 }
