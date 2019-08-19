@@ -1,5 +1,7 @@
 @extends('main')
-
+@section('title')
+    ثبت رایگان آگهی
+@endsection
 @section('content')
     @if(!auth()->check())
         <form action="{{ route('createAdvertising') }}" method="POST">

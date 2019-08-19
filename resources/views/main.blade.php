@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="{{ asset('/css/mobile.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/css/tablet.css') }}"/>
     @yield('style')
-    <title>@yield('title')</title>
+    <title>نام سایت | @yield('title')</title>
 </head>
 <body>
     @include('fixes.header')
@@ -108,7 +108,7 @@
     const dialog = new mdc.dialog.MDCDialog(document.querySelector('.dialog_city'));
     // const dialog_dis = new mdc.dialog.MDCDialog(document.querySelector('.dialog_distric'));
     const list = new mdc.list.MDCList(document.querySelector('.dialog_city .mdc-list'));
-    const city_select = document.querySelector('.city_select');
+    const city_select = document.querySelector('.city_select,.city_select0');
     const close_city = document.querySelector('.close_city');
     const close_city2 = document.querySelector('.close_city2');
     // const back_to_city = document.querySelector('.back_to_city');

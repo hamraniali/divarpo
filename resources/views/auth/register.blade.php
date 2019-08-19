@@ -7,7 +7,7 @@
             <hr>
             <form action="{{ route('register') }}" method="POST">
                 @csrf
-                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12" style="height: 48px;float: right;margin-top: 10px">
+                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border" style="height: 48px;float: right;margin-top: 10px">
                     <i class="material-icons mdc-text-field__icon">person</i>
                     <input type="text" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="نام خود را وارد کنید..." aria-describedby="text-field-outlined-leading-helper-text">
                     <div class="mdc-notched-outline mdc-notched-outline--upgraded">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 form-set" style="float: right;margin-top: 10px;height: 48px">
+                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border form-set" style="float: right;margin-top: 10px;height: 48px">
                     <i class="material-icons mdc-text-field__icon">people</i>
                     <input type="text" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="نام خانوادگی خود را وارد کنید..." aria-describedby="text-field-outlined-leading-helper-text">
                     <div class="mdc-notched-outline mdc-notched-outline--upgraded">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12" style="height: 48px;float: right;margin-top: 10px">
+                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border" style="height: 48px;float: right;margin-top: 10px">
                     <i class="material-icons mdc-text-field__icon">phone</i>
                     <input type="text" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="شماره تلفن خود را وارد کنید..." aria-describedby="text-field-outlined-leading-helper-text">
                     <div class="mdc-notched-outline mdc-notched-outline--upgraded">
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 form-set" style="height: 48px;float: right;margin-top: 10px">
+                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border form-set" style="height: 48px;float: right;margin-top: 10px">
                     <i class="material-icons mdc-text-field__icon">lock</i>
                     <input type="password" name="password" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="رمز عبور مورد نظر خود را وارد کنید..." aria-describedby="text-field-outlined-leading-helper-text">
                     <div class="mdc-notched-outline mdc-notched-outline--upgraded">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mdc-text-field mdc-text-field--textarea col-lg-5 col-md-5 col-sm-12 col-xs-12" style="margin-top: 10px;float: right">
+                <div class="mdc-text-field mdc-text-field--textarea col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border" style="margin-top: 10px;float: right">
                     <i class="material-icons mdc-text-field__icon" style="top: 10px;position: relative">location_on</i>
                     <textarea id="textarea" style="font-size: 16px;margin-right: 30px;border: none;width: 100%;margin-top: 12px;" class="my-font" placeholder="آدرس خود را وارد کنید..." rows="8" cols="40"></textarea>
                     <div class="mdc-notched-outline">

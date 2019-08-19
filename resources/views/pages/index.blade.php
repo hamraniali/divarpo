@@ -1,4 +1,7 @@
 @extends('main')
+@section('title')
+    صفحه اصلی
+@endsection
 @section('content')
     <div class="container">
         <form action="{{ route('search') }}">
@@ -7,24 +10,16 @@
                 <input name="search" placeholder="جستوجو..." type="text" style="border-radius: 5px;width: 100%;height: 45px;background-color: white;border: 1px solid #e0e0e0;padding: 10px;direction: rtl;" value="{{ isset($_GET['search']) && !empty($_GET['search']) ? $_GET['search'] : '' }}">
                 <div style="display: flex;margin-top: 10px;width: 100%">
                     <div style="width: 50%">
-                        <select name="city" id="city" class="filter-select" style="width: 100%;border-radius: 5px !important;float: right!important;margin: 0 !important;">
-                            @if(isset($_GET['city']) && !empty($_GET['city']))
-                                <?php
-                                $city_name = $_GET['city'];
-                                ?>
-                                <option selected value="{{ $city_name }}">
-                                    {{ $city_name }}
-                                </option>
-                            @else
-                                <option selected value="">شهر</option>
-                            @endif
-                            <option value="">شهر</option>
-                            <option value="">شهر</option>
-                            <option value="">شهر</option>
-                        </select>
+                        <?php $cities = \App\City::all(); ?>
+                        <div style="border-radius: 5px;border: 1px solid #e0e0e0;width: 100%;height: 37px;padding:13px;color: black;font-size:14px;background-color: white;cursor: pointer" class="city_select0">
+                            <input class="distric_city0" name="distric" type="text" style="    position: relative;
+    bottom: 4px;width: 82px;text-align: right;pointer-events:none;cursor: pointer;color: black;background-color: white;border: none" value="{{ isset($_GET['distric']) && !empty($_GET['distric']) ? $_GET['distric'] : '' }}" placeholder="موقعیت مکانی">
+                            <span class="material-icons" style="float: left;position: relative;
+    top: -9px;color: #6c757d">location_on</span>
+                        </div>
                     </div>
                     <div style="width: 50%">
-                        <select name="category" id="category" class="filter-select" style="width: 100%;border-radius: 5px !important;float: left!important;">
+                        <select name="category" id="category" class="filter-select" style="width: 100%;border-radius: 5px !important;float: left!important;;direction: rtl;color: #6c757d">
                             @if(isset($_GET['category']) && !empty($_GET['category']))
                                 <?php
                                 $category_id = $_GET['category'];
@@ -132,4 +127,87 @@
             </i>نمایش همه آگهی ها
         </button>
     </div>
+
+    {{--///////////////////////////////////////////////////////////////////////////////////////////--}}
+    <div class="mdc-dialog dialog_city0"
+         role="alertdialog"
+         aria-modal="true"
+         aria-labelledby="my-dialog-title"
+         aria-describedby="my-dialog-content"
+         dir="rtl">
+        <div class="mdc-dialog__container my-font">
+            <div class="mdc-dialog__surface">
+                <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+                <h2 class="mdc-dialog__title my-font" id="my-dialog-title" style="text-align: center !important;">
+                    <button class="material-icons mdc-icon-button close_city00" data-mdc-ripple-is-unbounded="true" style="float: right;position: relative;right: -10px">close</button>
+                    <span style="font-size: 18px;    position: absolute;
+    top: 16px;
+    right: 153px;">شهر ها</span>
+                </h2>
+                <div class="mdc-dialog__content" id="my-dialog-content">
+                    <ul class="mdc-list mdc-list0 mdc-list--avatar-list">
+                        <?php
+                        $cities = \App\City::all();
+                        $districs = \App\District::all();
+                        ?>
+                        @foreach($cities as $city)
+                            <select onchange="changeDistric0(this.value)" name="distric" class="my-font" id="distric" style="cursor: pointer;border-radius: 5px;padding: 10px;width: 100%;height: 40px;background-color: white;border: 1px solid #e0e0e0;margin-top: 10px;font-size: 14px;">
+                                <option value="" selected>{{ $city->name }}</option>
+                                @foreach($districs as $distric)
+                                    @if($distric->city_id == $city->id)
+                                        <option value="{{ $distric->name }}">{{ $distric->name }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        @endforeach
+                    </ul>
+                    <div class="mdc-text-field mdc-text-field--textarea col-lg-12 col-md-12 col-sm-12 col-xs-12 form-camera-set" style="margin-top: 20px;float: right;justify-content:space-around;">
+                        <button style="width: 199px;height: 45px;color: white;font-size: 16px;border: none;border-radius: 5px;font-weight: bold" class="close_city000 blue-shadow blue-color-back form-camera-set my-font btn-ripple mdc-ripple-surface">تایید</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+    {{--///////////////////////////////////////////////////////////////////////////////////--}}
+@endsection
+@section('script')
+    <script type="text/javascript">
+        const dialog0 = new mdc.dialog.MDCDialog(document.querySelector('.dialog_city0'));
+        // const dialog_dis = new mdc.dialog.MDCDialog(document.querySelector('.dialog_distric'));
+        const list0 = new mdc.list.MDCList(document.querySelector('.dialog_city0 .mdc-list0'));
+        const city_select0 = document.querySelector('.city_select0');
+        const close_city00 = document.querySelector('.close_city00');
+        const close_city000 = document.querySelector('.close_city000');
+        city_select0.addEventListener('click' , (e) => {
+            dialog0.open();
+        });
+        close_city00.addEventListener('click' , (e) => {
+            dialog0.close();
+            const distric_city0 = document.querySelector('.distric_city0');
+            distric_city0.setAttribute('value' , '');
+        });
+        close_city000.addEventListener('click' , (e) => {
+            dialog0.close();
+        });
+        // back_to_city.addEventListener('click' ,(e) => {
+        //     dialog_dis.close();
+        //     dialog.open();
+        // });
+        // close_all.addEventListener('click' ,(e) => {
+        //     dialog_dis.close();
+        //
+        // });
+        dialog0.listen('MDCDialog:opened', () => {
+            list0.layout();
+        });
+
+
+    </script>
+    <script type="text/javascript">
+        function changeDistric0(id) {
+            const distric_city0 = document.querySelector('.distric_city0');
+            distric_city0.setAttribute('value' , id);
+        }
+    </script>
 @endsection
