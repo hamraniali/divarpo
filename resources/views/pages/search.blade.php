@@ -92,7 +92,12 @@
                                 </span>
                                         <div style="position: absolute;
     bottom: 59px;">
-                                            <span style="font-size: 15px;" class="black-color">{{ $advertising->city }}</span>
+                                            <?php
+                                                $city = \App\City::find($advertising->city_id);
+                                                $district = \App\District::find($advertising->district_id);
+                                            ?>
+                                            <span style="font-size: 15px;" class="black-color">{{ $city->name }} - </span>
+                                            <span style="font-size: 13px;color: #636b6f">{{ $district->name }}</span>
                                             <br>
                                             <span style="color: #9e9e9e;font-size: 12px;">{{ $advertising->created_at }}</span>
                                         </div>

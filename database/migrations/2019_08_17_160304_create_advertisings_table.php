@@ -24,7 +24,8 @@ class CreateAdvertisingsTable extends Migration
             $table->string('status' , 200);
             $table->string('images' , 600);
             $table->string('price' , 50);
-            $table->string('city' , 50);
+            $table->integer('city_id')->unsigned();
+            $table->integer('district_id')->unsigned();
             $table->boolean('active');
             $table->timestamps();
         });

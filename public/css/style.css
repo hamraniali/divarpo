@@ -168,7 +168,7 @@ input:focus, textarea:focus, select:focus,button:focus{
      color: #5a6268;
  }
 
-[type="file"] {
+.image1,.image2,.image3 {
     border: 0;
     clip: rect(0, 0, 0, 0);
     height: 1px;
@@ -179,7 +179,7 @@ input:focus, textarea:focus, select:focus,button:focus{
     width: 1px;
 }
 
-[type="file"] + label {
+.image1 + label,.image2 + label,.image3 + label {
     background-color: #e0e0e0;
     box-shadow: 0 0 8px #e0e0e0;
     border-radius: 4rem;
@@ -193,12 +193,12 @@ input:focus, textarea:focus, select:focus,button:focus{
     font-size: 30px !important;
 }
 
-[type="file"]:focus + label,
-[type="file"] + label:hover {
+.image1:focus + label,.image2:focus + label,.image3:focus + label,
+.image1 + label:hover,.image2 + label:hover,.image3 + label:hover {
     border: 3px dashed rgb(0, 191, 214)!important;
 }
 
-[type="file"]:focus + label {
+.image1:focus + label,.image2:focus + label,.image3:focus + label {
     outline: 1px dotted #000;
 }
 .buti-border{

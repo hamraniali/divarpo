@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Advertising extends Model
 {
     protected $fillable = [
-      'category_id','user_id','name','description','images','price','city','active'
+      'category_id','user_id','name','description','images','price','city_id','district_id','active'
     ];
 
     public function scopeActive($query)
@@ -20,8 +20,9 @@ class Advertising extends Model
         if (isset($inputs['search']) && !empty($inputs['search'])) {
             $query->where('name' , 'LIKE' , '%'.$inputs['search'].'%');
         }
-        if (isset($inputs['city']) && !empty($inputs['city'])) {
-            $query->where('city' , $inputs['city']);
+        if (isset($inputs['distric']) && !empty($inputs['distric'])) {
+            $district = District::where('name' , $inputs['distric'])->first();
+            $query->where('district_id' , $district->id);
         }
         if (isset($inputs['category']) && !empty($inputs['category'])) {
 

@@ -18,26 +18,19 @@
             <form action="{{ route('search') }}" style="display: contents!important;">
                 @csrf
                 <div style="width: 100%;height: 47px;border-radius: 150rem;display: inherit;padding-left: 10px;">
-                    <input type="text" value="{{ isset($_GET['search']) && !empty($_GET['search']) ? $_GET['search'] : '' }}" name="search" class="box-search black-color" placeholder="جستوجو...">
+                    <input style="font-size: 14px!important;" type="text" value="{{ isset($_GET['search']) && !empty($_GET['search']) ? $_GET['search'] : '' }}" name="search" class="box-search black-color" placeholder="جستوجو...">
                     <div style="width: 25%;height: 100%;background-color: #f5f5f5" class="border-input">
-                        <select name="city" id="city" class="my-font search-select" style="color: black!important;">
-                            @if(isset($_GET['city']) && !empty($_GET['city']))
-                                <?php
-                                $city_name = $_GET['city'];
-                                ?>
-                                <option selected value="{{ $city_name }}">
-                                    {{ $city_name }}
-                                </option>
-                            @else
-                                <option selected value="">شهر</option>
-                            @endif
-                            <option value="abadan">abadan</option>
-                            <option value="تهران"> تهران</option>
-                            <option value="تهران"> تهران</option>
-                        </select>
+                        <?php $cities = \App\City::all(); ?>
+                        <div style="width: 100%;height: 100%;padding:13px;color: black;font-size:14px;background-color: white;cursor: pointer" class="city_select">
+                            <input class="distric_city" name="distric" type="text" style="pointer-events:none;cursor: pointer;color: black;background-color: white;border: none" value="{{ isset($_GET['distric']) && !empty($_GET['distric']) ? $_GET['distric'] : '' }}" placeholder="موقعیت مکانی">
+                            <span class="material-icons" style="float: left;position: relative;
+    top: -4px;">arrow_back</span>
+                        </div>
                     </div>
                     <div style="width: 25%;height: 100%;background-color: #f5f5f5" class="border-input">
-                        <select name="category" id="category" class="my-font search-select" style="color: black!important;">
+                        <select name="category" id="category" class="my-font search-select" style="color: #636b6f!important;font-size: 14px !important;
+    padding-right: 11px;
+    padding-left: 11px;">
                             @if(isset($_GET['category']) && !empty($_GET['category']))
                                 <?php
                                     $category_id = $_GET['category'];
@@ -137,3 +130,45 @@
     </div>
 </aside>
 <div class="mdc-drawer-scrim"></div>
+
+
+<div class="mdc-dialog dialog_city"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content"
+     dir="rtl">
+    <div class="mdc-dialog__container my-font">
+        <div class="mdc-dialog__surface">
+            <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+            <h2 class="mdc-dialog__title my-font" id="my-dialog-title" style="text-align: center !important;">
+                <button class="material-icons mdc-icon-button close_city" data-mdc-ripple-is-unbounded="true" style="float: right;position: relative;right: -10px">close</button>
+                <span style="font-size: 18px;    position: absolute;
+    top: 16px;
+    right: 153px;">شهر ها</span>
+            </h2>
+            <div class="mdc-dialog__content" id="my-dialog-content">
+                <ul class="mdc-list mdc-list--avatar-list">
+                    <?php
+                    $cities = \App\City::all();
+                    $districs = \App\District::all();
+                    ?>
+                    @foreach($cities as $city)
+                            <select onchange="changeDistric(this.value)" name="distric" class="my-font" id="distric" style="cursor: pointer;border-radius: 5px;padding: 10px;width: 100%;height: 40px;background-color: white;border: 1px solid #e0e0e0;margin-top: 10px;font-size: 14px">
+                                <option value="" selected>{{ $city->name }}</option>
+                                @foreach($districs as $distric)
+                                    @if($distric->city_id == $city->id)
+                                        <option value="{{ $distric->name }}">{{ $distric->name }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                    @endforeach
+                </ul>
+                <div class="mdc-text-field mdc-text-field--textarea col-lg-12 col-md-12 col-sm-12 col-xs-12 form-camera-set" style="margin-top: 20px;float: right;justify-content:space-around;">
+                    <button style="width: 199px;height: 45px;color: white;font-size: 16px;border: none;border-radius: 5px;font-weight: bold" class="close_city2 blue-shadow blue-color-back form-camera-set my-font btn-ripple mdc-ripple-surface">تایید</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+</div>

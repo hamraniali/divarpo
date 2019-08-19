@@ -104,8 +104,48 @@
         mdc.ripple.MDCRipple.attachTo(button);
     }
 </script>
+<script type="text/javascript">
+    const dialog = new mdc.dialog.MDCDialog(document.querySelector('.dialog_city'));
+    // const dialog_dis = new mdc.dialog.MDCDialog(document.querySelector('.dialog_distric'));
+    const list = new mdc.list.MDCList(document.querySelector('.dialog_city .mdc-list'));
+    const city_select = document.querySelector('.city_select');
+    const close_city = document.querySelector('.close_city');
+    const close_city2 = document.querySelector('.close_city2');
+    // const back_to_city = document.querySelector('.back_to_city');
+    // const close_all = document.querySelector('.close_all');
+    city_select.addEventListener('click' , (e) => {
+        dialog.open();
+    });
+    close_city.addEventListener('click' , (e) => {
+        dialog.close();
+        const distric_city = document.querySelector('.distric_city');
+        distric_city.setAttribute('value' , '');
+    });
+    close_city2.addEventListener('click' , (e) => {
+        dialog.close();
+    });
+    // back_to_city.addEventListener('click' ,(e) => {
+    //     dialog_dis.close();
+    //     dialog.open();
+    // });
+    // close_all.addEventListener('click' ,(e) => {
+    //     dialog_dis.close();
+    //
+    // });
+    dialog.listen('MDCDialog:opened', () => {
+        list.layout();
+    });
+
+
+</script>
+<script type="text/javascript">
+    function changeDistric(id) {
+        const distric_city = document.querySelector('.distric_city');
+        distric_city.setAttribute('value' , id);
+    }
+</script>
 {{--<script type="text/javascript">--}}
-    {{--const switchControl = new MDCSwitch(document.querySelector('.mdc-switch'));--}}
+    {{--const switchControl = new mdc.switchControl.MDCSwitch(document.querySelector('.mdc-switch'));--}}
 {{--</script>--}}
 @yield('script')
 </html>
