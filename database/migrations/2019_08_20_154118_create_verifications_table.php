@@ -15,6 +15,9 @@ class CreateVerificationsTable extends Migration
     {
         Schema::create('verifications', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('code' , 4);
+            $table->integer('user_id')->unsigned();
+            $table->dateTime('expire');
             $table->timestamps();
         });
     }

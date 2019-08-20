@@ -7,6 +7,7 @@
 @endsection
 @section('content')
     @if(auth()->check())
+        @if(auth()->user()->active == 1)
         <form action="{{ route('createAdvertising') }}" method="POST">
             <div class="container" dir="rtl">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="float: right;direction: rtl;height: auto;padding: 30px;display: inline-block;background-color: white;border: 1px solid #e0e0e0;box-shadow: 0px 0px 8px #e0e0e0">
@@ -185,6 +186,17 @@
             <div class="mdc-dialog__scrim"></div>
         </div>
         {{--///////////////////////////////////////////////////////////////////////////////////--}}
+         @else
+            <div style="text-align: center" class="container">
+                <div style="text-align: center;height: auto;background-color: #b91d19; line-height: 51px;padding: 10px;   color: #856404;
+    background-color: #fff3cd;border-radius: 150rem;
+    border-color: #ffeeba;">
+                    <span>برای ثبت رایگان آگهی باید شماره خود را فعال کنید کنید</span>
+                    <br>
+                    <a href="#!" class=" my-font btn-ripple" style="background-color: #856404;color: white;font-size: 16px;padding: 10px 33px;border-radius: 5px">فعالسازی</a>
+                </div>
+            </div>
+         @endif
     @else
         <div style="text-align: center" class="container">
             <div style="text-align: center;height: auto;background-color: #b91d19; line-height: 51px;padding: 10px;   color: #856404;

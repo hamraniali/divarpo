@@ -70,7 +70,7 @@
 
                 <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border form-set" style="height: 48px;float: right;margin-top: 10px;@error('password') border-right: 5px solid #ef5661!important; @enderror">
                     <i class="material-icons mdc-text-field__icon">lock</i>
-                    <input type="password" name="password" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="رمز عبور مورد نظر خود را وارد کنید..." aria-describedby="text-field-outlined-leading-helper-text">
+                    <input value="{{ old('password') }}" type="password" name="password" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="رمز عبور مورد نظر خود را وارد کنید..." aria-describedby="text-field-outlined-leading-helper-text">
                     <div class="mdc-notched-outline mdc-notched-outline--upgraded">
                         <div class="mdc-notched-outline__leading">
 
@@ -95,6 +95,9 @@
                 </div>
                 <div class="mdc-text-field mdc-text-field--textarea col-lg-5 col-md-5 col-sm-12 col-xs-12" style="margin-top: 20px;float: right;justify-content:space-around">
                     <button type="submit" style="width: 199px;height: 45px;color: white;font-size: 16px;border: none;border-radius: 5px;font-weight: bold" class="blue-shadow blue-color-back my-font btn-ripple mdc-ripple-surface">ثبت نام</button>
+                </div>
+                <div class="mdc-text-field mdc-text-field--textarea col-lg-5 col-md-5 col-sm-12 col-xs-12" style="text-align: center;line-height: 47px;margin-top: 20px;float: right;justify-content:space-around">
+                    <a href="{{ route('login') }}" type="submit" style="width: 199px;height: 45px;color: white;font-size: 16px;border: none;border-radius: 5px;font-weight: bold" class="blue-color my-font btn-ripple mdc-ripple-surface--accent	mdc-ripple-surface">حساب دارید؟ وارد شوید</a>
                 </div>
             </form>
         </div>
