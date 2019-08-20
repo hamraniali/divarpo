@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use http\Env\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/verification';
+    protected $redirectTo = "/verification/newuser";
 
     /**
      * Create a new controller instance.
@@ -53,7 +54,7 @@ class RegisterController extends Controller
             'family' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:13', 'unique:users'],
             'address' => ['required', 'string', 'max:900'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
         ]);
     }
 

@@ -2,8 +2,11 @@
 @section('title')
     ثبت رایگان آگهی
 @endsection
+@section('head_left_icon')
+    <a href="{{ \Illuminate\Support\Facades\URL::previous() }}" class="material-icons mdc-icon-button bold-font btn-left-side" data-mdc-ripple-is-unbounded="true" style="color: black;margin-top: 7px;margin-right: 15px;position: absolute;left: 10px">arrow_back</a>
+@endsection
 @section('content')
-    @if(!auth()->check())
+    @if(auth()->check())
         <form action="{{ route('createAdvertising') }}" method="POST">
             <div class="container" dir="rtl">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="float: right;direction: rtl;height: auto;padding: 30px;display: inline-block;background-color: white;border: 1px solid #e0e0e0;box-shadow: 0px 0px 8px #e0e0e0">

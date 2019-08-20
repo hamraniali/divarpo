@@ -9,13 +9,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $advertisings = Advertising::active()->paginate(20);
+        $advertisings = Advertising::active()->latest()->paginate(20);
         return view('pages.index' , compact('advertisings'));
     }
 
     public function search(Request $request)
     {
-        $advertisings = Advertising::active()->search($request->all())->paginate(20);
+        $advertisings = Advertising::active()->search($request->all())->latest()->paginate(20);
         return view('pages.search' , compact('advertisings'));
     }
 }

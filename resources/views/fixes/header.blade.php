@@ -60,7 +60,7 @@
         </section>
 
         <a href="{{ route('createad') }}" class="my-font blue-color-back btn-ripple mdc-ripple-surface btn-sabt my-font bold-font desk-add blue-shadow" style="float: left">ثبت رایگان آگهی</a>
-        <button class="material-icons mdc-icon-button bold-font menu-btn btn-profile" data-mdc-ripple-is-unbounded="true" style="color: black;margin-top: 7px;margin-right: 15px;position: absolute;left: 10px">person</button>
+        @yield('head_left_icon')
     </div>
 </header>
 <a href="{{ route('createad') }}">
@@ -93,6 +93,13 @@
                     <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
                     <span class="mdc-list-item__text new-a">لوازم من</span>
                 </a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="mdc-list-item my-font" style="width: 100%;background-color: transparent;border: none">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">exit_to_app</i>
+                        <span class="mdc-list-item__text new-a" style="color: #ef5661">خروج</span>
+                    </button>
+                </form>
             @else
                 <a class="mdc-list-item my-font" href="{{ route('login') }}">
                     <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
@@ -118,14 +125,32 @@
     </div>
     <div class="mdc-drawer__content my-font">
         <nav class="mdc-list" dir="rtl">
-            <a class="mdc-list-item my-font" href="{{ route('login') }}">
-                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
-                <span class="mdc-list-item__text new-a">ورود</span>
-            </a>
-            <a class="mdc-list-item my-font" href="{{ route('register') }}">
-                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person_add</i>
-                <span class="mdc-list-item__text new-a">ثبت نام</span>
-            </a>
+            @if(auth()->check())
+                <a class="mdc-list-item my-font" href="#!">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
+                    <span class="mdc-list-item__text new-a">لوازم من</span>
+                </a>
+                <a class="mdc-list-item my-font" href="{{ route('createad') }}">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">add</i>
+                    <span class="mdc-list-item__text new-a">اضافه کرده آگهی</span>
+                </a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="mdc-list-item my-font" style="width: 100%;background-color: transparent;border: none">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">exit_to_app</i>
+                        <span class="mdc-list-item__text new-a" style="color: #ef5661">خروج</span>
+                    </button>
+                </form>
+            @else
+                <a class="mdc-list-item my-font" href="{{ route('login') }}">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
+                    <span class="mdc-list-item__text new-a">ورود</span>
+                </a>
+                <a class="mdc-list-item my-font" href="{{ route('register') }}">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person_add</i>
+                    <span class="mdc-list-item__text new-a">ثبت نام</span>
+                </a>
+            @endif
         </nav>
     </div>
 </aside>

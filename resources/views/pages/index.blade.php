@@ -2,6 +2,12 @@
 @section('title')
     صفحه اصلی
 @endsection
+@section('head_left_icon')
+    <button class="material-icons mdc-icon-button bold-font menu-btn btn-profile" data-mdc-ripple-is-unbounded="true" style="color: black;margin-top: 7px;margin-right: 15px;position: absolute;left: 10px">person</button>
+@endsection
+{{--@section('style')--}}
+    {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
+{{--@endsection--}}
 @section('content')
     <div class="container">
         <form action="{{ route('search') }}">
@@ -94,7 +100,11 @@
                                             <span style="font-size: 15px;" class="black-color">{{ $city->name }} - </span>
                                             <span style="font-size: 13px;color: #636b6f">{{ $district->name }}</span>
                                             <br>
-                                            <span style="color: #9e9e9e;font-size: 12px;">{{ $advertising->created_at }}</span>
+                                                <?php
+                                                    $ekhtelaf = strtotime(\Carbon\Carbon::now()) - strtotime($advertising->created_at);
+                                                    $date = \Morilog\Jalali\Jalalian::forge(strtotime(\Carbon\Carbon::now()) - $ekhtelaf)->ago();
+                                                ?>
+                                            <span style="color: #9e9e9e;font-size: 12px;">{{ $date }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -121,11 +131,13 @@
     </div>
 
     <div class="container" style="text-align: center">
-        <button class="my-font btn-ripple mdc-ripple-surface mdc-ripple-surface--accent btn-sabt my-font bold-font" style="border: none;border: 2px solid rgb(0, 191, 214) !important;background-color: #f5f5f5;color: rgb(0, 191, 214) !important;">
-            <i class="material-icons" style="    position: relative;
-    top: 9px;">expand_more
-            </i>نمایش همه آگهی ها
-        </button>
+        {{--<button class="my-font btn-ripple mdc-ripple-surface mdc-ripple-surface--accent btn-sabt my-font bold-font" style="border: none;border: 2px solid rgb(0, 191, 214) !important;background-color: #f5f5f5;color: rgb(0, 191, 214) !important;">--}}
+            {{--<i class="material-icons" style="    position: relative;--}}
+    {{--top: 9px;">expand_more--}}
+            {{--</i>نمایش همه آگهی ها--}}
+        {{--</button>--}}
+        <br>
+        {{ $advertisings->links() }}
     </div>
 
     {{--///////////////////////////////////////////////////////////////////////////////////////////--}}

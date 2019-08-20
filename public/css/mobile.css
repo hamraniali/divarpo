@@ -57,4 +57,7 @@
     .form-camera-set{
         margin-top: 10px;
     }
+    .btn-left-side{
+        display: block;
+    }
 }
