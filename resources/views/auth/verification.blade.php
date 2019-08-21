@@ -13,11 +13,11 @@
             <br>
             <span style="font-size: 12px;color: #636b6f">برای فعالسازی اکانت خود کد ارسال شده را در زیر وارد کنید.</span>
             <hr>
-            <form action="#" method="GET">
+            <form action="{{ route('checkcode') }}" method="POST">
                 @csrf
-                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border" style="height: 48px;float: right;margin-top: 10px">
+                <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border" style="height: 48px;float: right;margin-top: 10px;@error('code') border-right: 5px solid #ef5661!important; @enderror">
                     <i class="material-icons mdc-text-field__icon">mobile</i>
-                    <input type="number" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="کد فعالسازی" aria-describedby="text-field-outlined-leading-helper-text">
+                    <input value="{{ old('code') }}" name="code" type="number" style="font-size: 16px;margin-right: 30px;border: none;width: 100%" class="my-font" placeholder="کد فعالسازی" aria-describedby="text-field-outlined-leading-helper-text">
                     <div class="mdc-notched-outline mdc-notched-outline--upgraded">
                         <div class="mdc-notched-outline__leading">
 

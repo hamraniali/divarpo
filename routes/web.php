@@ -18,9 +18,7 @@ Route::get('/createAdvertising' , 'AdvertisingController@create')->name('createa
 Route::get('/advertising/{id}' , 'AdvertisingController@show')->name('advertising');
 Route::post('/createAdvertising' , 'AdvertisingController@store')->name('createAdvertising');
 Route::get('/verification/{id}' , 'VerificationController@show')->name('verification');
+Route::get('/sendcode' , 'VerificationController@send')->name('sendcode');
+Route::post('/checkcode' , 'VerificationController@check')->name('checkcode');
 Route::post('/signin' , 'Auth\LoginController@signin')->name('signin');
-
-Route::get('test' , function () {
-   return var_dump(\Illuminate\Support\Facades\Hash::check('12345678' , '$2y$10$oxXsQ9dc/SEUKV/OZV6uHuwJaLXYLlTPWMh/B/XevouVkie0QLfpa'));
-});
 

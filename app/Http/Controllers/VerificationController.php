@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Verification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -9,6 +10,12 @@ use Illuminate\Http\Request;
 class VerificationController extends Controller
 {
     public function show()
+    {
+        return view('auth.verification');
+    }
+
+
+    public function send()
     {
         if (auth()->check()){
             $user = auth()->user();
@@ -20,27 +27,26 @@ class VerificationController extends Controller
             $verification->created_at = Carbon::now();
             $verification->save();
             try{
-                $api = new \Kavenegar\KavenegarApi( "657349706A6542536E544A5742677546465835587471624335793368316C6D6A" );
-                $sender = "10004346";
+                $api = new \Kavenegar\KavenegarApi( "426E58337A5271456E5A716262314F576B4A74434E714F6D4D34757A386D3033" );
+                $sender = "1000596446";
                 $message = "کد فعالسازی سایت :‌" . $code;
                 $receptor = $user->phone;
                 $result = $api->Send($sender,$receptor,$message);
                 if($result){
-                    return view('auth.verification');
+                    return redirect(route('verification' , ['id' => encrypt('تلاشت قابل تحسینه')]));
                 }
             }
             catch(\Kavenegar\Exceptions\ApiException $e){
                 // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
-                echo $e->errorMessage();
+                return redirect(route('login'))->with(['status' => 'error' , 'message' => $e->errorMessage()]);
             }
             catch(\Kavenegar\Exceptions\HttpException $e){
                 // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
-                echo $e->errorMessage();
+                return redirect(route('login'))->with(['status' => 'error' , 'message' => $e->errorMessage()]);
             }
-//            return view('auth.verification');
         }
         else{
-            return redirect(route('login'));
+            return redirect(route('login'))->with(['status' => 'error' , 'message' => 'خظا در احراز هویت لظفا دویاره تلاش کنید']);
         }
     }
 
@@ -51,8 +57,21 @@ class VerificationController extends Controller
         if (auth()->check()) {
             $user = auth()->user();
             $check = Verification::where('user_id' , $user->id)
-                ->where('code' , $request->input('code'));
-//            if ($check != null)
+                ->where('code' , $request->input('code'))->first();
+            if ($check != null && !empty($check)) {
+                if (strtotime($check->expire) > strtotime(Carbon::now())) {
+                    $active_user = User::where('id' , $user->id)->update([
+                        'active' => 1,
+                        'phone_verified_at' => Carbon::now()
+                    ]);
+                    if ($active_user) {
+                        return redirect(route('home'))->with(['status' => 'success' , 'message' => 'حساب شما با موفقیت فعال شد']);
+                    }
+                }
+            }
+            else {
+                return redirect(route('verification'))->with(['status' => 'error' , 'message' => 'کد فعالسازی نادرست است']);
+            }
         }
         else{
             return redirect(route('login'));

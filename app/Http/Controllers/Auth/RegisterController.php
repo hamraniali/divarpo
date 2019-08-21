@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = "/verification/newuser";
+    protected $redirectTo = "/sendcode";
 
     /**
      * Create a new controller instance.
