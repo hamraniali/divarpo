@@ -17,6 +17,12 @@
                 <span>{{ session('message') }}</span>
             </div>
             @endif
+            @if(session('status') == 'success')
+                <div style="text-align: center;height: auto;background-color: #d4edda; line-height: 51px;padding: 10px;color: #155724;border-radius: 150rem;
+    border-color: #ffeeba;">
+                    <span>{{ session('message') }}</span>
+                </div>
+            @endif
             <form action="{{ route('signin') }}" method="POST">
                 @csrf
                 <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border" style="@error('phone') border-right: 5px solid #ef5661!important; @enderror;height: 48px;float: right;margin-top: 10px">
@@ -55,6 +61,9 @@
                     <div class="mdc-text-field mdc-text-field--textarea col-lg-5 col-md-5 col-sm-12 col-xs-12 form-set" style="text-align: center;line-height: 47px;margin-top: 20px;float: right;justify-content:space-around">
                         <a href="{{ route('register') }}" type="submit" style="width: 199px;height: 45px;color: white;font-size: 16px;border: none;border-radius: 5px;font-weight: bold" class="blue-color my-font btn-ripple mdc-ripple-surface--accent	mdc-ripple-surface">می خواهید ثبت نام کنید؟</a>
                     </div>
+                <div class="mdc-text-field mdc-text-field--textarea col-lg-5 col-md-5 col-sm-12 col-xs-12 form-set" style="text-align: center;line-height: 47px;margin-top: 20px;float: right;justify-content:space-around">
+                    <a href="{{ route('forget') }}" type="submit" style="width: 230px;height: 45px;color: #856404;font-size: 16px;border: none;border-radius: 5px;font-weight: bold" class=" my-font btn-ripple mdc-ripple-surface">رمز عبور خود را قراموش کرده اید؟</a>
+                </div>
             </form>
         </div>
     </div>

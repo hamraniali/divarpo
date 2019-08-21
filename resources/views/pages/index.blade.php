@@ -85,8 +85,15 @@
                     <div class="card" style="margin-top: 10px">
                         <div class="card-body box-agahi box-agahi-title">
                             <a href="{{ route('advertising' , ['id' => $advertising->id]) }}">
-                                <div style="width: 100%;height: 150px;display: inline-flex;background-color: #9e9e9e">
-                                    <div style="width: 50%;height: 100%;border-bottom: solid 1px #e0e0e0;background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg')"></div>
+                                <div style="width: 100%;height: 150px;display: inline-flex;background-color: #e0e0e0">
+                                    <div style="width: 50%;height: 100%;border-bottom: solid 1px #e0e0e0;z-index: 4;background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg')">
+                                    </div>
+                                    <i class="material-icons" style="position: absolute;
+    font-size: 40px;
+    color: #e9e9e9;
+    top: 69px;
+    z-index: 0;
+    left: 21%;">camera_alt</i>
                                     <div style="width: 50%;height: 100%;background-color: white;border-bottom: 1px #e0e0e0 solid;padding: 7px;text-align: right;direction: rtl">
                                 <span style="font-size: 16px;font-weight: bold" class="black-color">
 {{ $advertising->name }}
@@ -159,8 +166,8 @@
                 <div class="mdc-dialog__content" id="my-dialog-content">
                     <ul class="mdc-list mdc-list0 mdc-list--avatar-list">
                         <?php
-                        $cities = \App\City::all();
-                        $districs = \App\District::all();
+                            $cities = \App\City::all();
+                            $districs = \App\District::all();
                         ?>
                         @foreach($cities as $city)
                             <select onchange="changeDistric0(this.value)" name="distric" class="my-font" id="distric" style="cursor: pointer;border-radius: 5px;padding: 10px;width: 100%;height: 40px;background-color: white;border: 1px solid #e0e0e0;margin-top: 10px;font-size: 14px;">

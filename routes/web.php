@@ -21,4 +21,6 @@ Route::get('/verification/{id}' , 'VerificationController@show')->name('verifica
 Route::get('/sendcode' , 'VerificationController@send')->name('sendcode');
 Route::post('/checkcode' , 'VerificationController@check')->name('checkcode');
 Route::post('/signin' , 'Auth\LoginController@signin')->name('signin');
+Route::get('/forget' , 'Auth\ForgotPasswordController@show')->name('forget');
+Route::post('/sendpass' , 'Auth\ForgotPasswordController@sendpass')->name('sendpass');
 

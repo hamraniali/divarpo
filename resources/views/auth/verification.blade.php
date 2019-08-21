@@ -13,6 +13,13 @@
             <br>
             <span style="font-size: 12px;color: #636b6f">برای فعالسازی اکانت خود کد ارسال شده را در زیر وارد کنید.</span>
             <hr>
+            @if(session('status') == 'error')
+                <div style="text-align: center;height: auto;background-color: #b91d19; line-height: 51px;padding: 10px;   color: #856404;
+    background-color: #fff3cd;border-radius: 150rem;
+    border-color: #ffeeba;">
+                    <span>{{ session('message') }}</span>
+                </div>
+            @endif
             <form action="{{ route('checkcode') }}" method="POST">
                 @csrf
                 <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon col-lg-5 col-md-5 col-sm-12 col-xs-12 buti-border" style="height: 48px;float: right;margin-top: 10px;@error('code') border-right: 5px solid #ef5661!important; @enderror">
@@ -34,6 +41,27 @@
                     <button type="submit" style="width: 199px;height: 45px;color: white;font-size: 16px;border: none;border-radius: 5px;font-weight: bold" class="blue-shadow blue-color-back my-font btn-ripple mdc-ripple-surface">تایید</button>
                 </div>
             </form>
+            <form action="{{ route('sendcode') }}">
+                <div class="mdc-text-field mdc-text-field--textarea col-lg-5 col-md-5 col-sm-12 col-xs-12" style="margin-top: 20px;float: right;justify-content: space-around">
+                    <span style="display: block" id="text-countdown">ارسال مجدد کد فعالسازی در  <span style="color:#856404" id="countdown"></span> ثانیه دیگر</span>
+                    <button id="btn-submit" type="submit" style="width: 199px;height: 45px;background: transparent;font-size: 16px;border: none;border-radius: 5px;font-weight: bold;color: #856404;" class="my-font btn-ripplet mdc-ripple-surface">ارسال مجدد</button>
+                </div>
+            </form>
         </div>
     </div>
+@endsection
+@section('script')
+    <script type="text/javascript">
+        document.getElementById("btn-submit").style.display = "none";
+        var timeleft = 60;
+        var downloadTimer = setInterval(function(){
+            document.getElementById("countdown").innerHTML = timeleft;
+            timeleft -= 1;
+            if(timeleft <= 0){
+                clearInterval(downloadTimer);
+                document.getElementById("btn-submit").style.display = "block";
+                document.getElementById("text-countdown").style.display = "none";
+            }
+        }, 1000);
+    </script>
 @endsection

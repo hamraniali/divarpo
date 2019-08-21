@@ -193,7 +193,9 @@
     border-color: #ffeeba;">
                     <span>برای ثبت رایگان آگهی باید شماره خود را فعال کنید کنید</span>
                     <br>
-                    <a href="#!" class=" my-font btn-ripple" style="background-color: #856404;color: white;font-size: 16px;padding: 10px 33px;border-radius: 5px">فعالسازی</a>
+                    <form action="{{ route('sendcode') }}">
+                        <button class=" my-font btn-ripple" style="border: none;background-color: #856404;color: white;font-size: 16px;padding: 10px 33px;border-radius: 5px;padding: 0 30px !important;">فعالسازی</button>
+                    </form>
                 </div>
             </div>
          @endif

@@ -70,7 +70,7 @@ class VerificationController extends Controller
                 }
             }
             else {
-                return redirect(route('verification'))->with(['status' => 'error' , 'message' => 'کد فعالسازی نادرست است']);
+                return redirect(route('verification',['id' => encrypt('تلاشت قابل تحسینه')]))->with(['status' => 'error' , 'message' => 'کد فعالسازی نادرست است']);
             }
         }
         else{
