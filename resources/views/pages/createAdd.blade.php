@@ -86,18 +86,19 @@
                             </select>
                         </div>
                 </div>
-                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-camera" style="direction: rtl;height: auto;padding: 30px;float: left;display: inline-block;background-color: white;border: 1px solid #e0e0e0;box-shadow: 0px 0px 8px #e0e0e0;">
+                <div class="pad-desk">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-camera" style="direction: rtl;height: auto;padding: 30px;float: left;display: inline-block;background-color: white;border: 1px solid #e0e0e0;box-shadow: 0px 0px 8px #e0e0e0;">
                         <h2 class="bold-font">اضافه کردن عکس</h2>
                         <hr>
 
-                            @error('image1')
-                                <div style="text-align: center;height: auto;background-color: #b91d19; line-height: 51px;padding: 10px;   color: #856404;
+                        @error('image1')
+                        <div style="text-align: center;height: auto;background-color: #b91d19; line-height: 51px;padding: 10px;   color: #856404;
             background-color: #fff3cd;border-radius: 150rem;
             border-color: #ffeeba;">
-                                    <span>فرمت عکس باید png , jpeg , jpg و حجم آن کمتر از 2048 باشد</span>
-                                </div>
-                                <br>
-                            @enderror
+                            <span>فرمت عکس باید png , jpeg , jpg و حجم آن کمتر از 2048 باشد</span>
+                        </div>
+                        <br>
+                        @enderror
                         @error('image2')
                         <div style="text-align: center;height: auto;background-color: #b91d19; line-height: 51px;padding: 10px;   color: #856404;
             background-color: #fff3cd;border-radius: 150rem;
@@ -138,6 +139,7 @@
                             <button type="submit" style="width: 199px;height: 45px;color: white;font-size: 16px;border: none;border-radius: 5px;font-weight: bold" class="blue-shadow blue-color-back form-camera-set my-font btn-ripple mdc-ripple-surface">ثبت آگهی</button>
                         </div>
                     </div>
+                </div>
 
                 {{--<input type="file" class="image11" onchange="image1func()"><span class="material-icons" id="image-icon1">camera_alt</span></input>--}}
                 {{--<input type="file" class="image22" onchange="image2func()"><span class="material-icons" id="image-icon2">camera_alt</span></input>--}}

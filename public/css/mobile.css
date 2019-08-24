@@ -60,4 +60,18 @@
     .btn-left-side{
         display: block;
     }
+    .pad-desk{
+        padding-right: 0px!important;
+    }
+    .pad-desk-true{
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+    .sticky-phone{
+        position: relative!important;
+        top: 0!important;
+    }
+    .image-size-mod-desk{
+        width: 150px !important;
+    }
 }

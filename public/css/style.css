@@ -225,3 +225,21 @@ input:focus, textarea:focus, select:focus,button:focus{
 .btn-left-side{
 	display: none;
 }
+.pad-desk{
+	padding-right: 20px
+}
+.pad-desk-true{
+	padding-right: 0;
+	padding-left: 0;
+}
+#owl-demo .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.sticky-phone{
+	position: sticky;position: -webkit-sticky;top: 80px
+}
+.image-size-mod-desk {
+	width: 300px !important;
+}
