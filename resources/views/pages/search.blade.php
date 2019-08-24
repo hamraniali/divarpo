@@ -83,7 +83,7 @@
                         <div class="card-body box-agahi box-agahi-title">
                             <a href="{{ route('advertising' , ['id' => $advertising->id]) }}">
                                 <div style="width: 100%;height: 150px;display: inline-flex;background-color: #9e9e9e">
-                                    <div style="width: 50%;height: 100%;border-bottom: solid 1px #e0e0e0;z-index: 4;background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg')">
+                                    <div style="width: 50%;height: 100%;border-bottom: solid 1px #e0e0e0;z-index: 1;background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg')">
                                     </div>
                                     <i class="material-icons" style="position: absolute;
     font-size: 40px;

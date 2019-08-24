@@ -3,7 +3,7 @@
         <div class="desk-head">
             <button class="material-icons mdc-icon-button bold-font menu-btn" data-mdc-ripple-is-unbounded="true" style="color: black;margin-top: 7px;margin-right: 15px;">menu</button>
             <span class="mdc-top-app-bar__title my-font" style="line-height: 63px;padding-left: 23px;">
-                    <a href="{{ route('home') }}"><img class="logo" src="{{ asset('/images/download.png') }}" alt="my site" style="margin-top: -18px"></a>
+                    <a href="{{ route('home') }}"><img class="logo" src="{{ asset('/images/download.png') }}" alt="my site" style="width: 90px;margin-top: -18px"></a>
                 </span>
         </div>
 
@@ -11,7 +11,8 @@
             <button class="material-icons mdc-icon-button bold-font menu-btn-mobile" data-mdc-ripple-is-unbounded="true" style="color: black;margin-top: 7px;margin-right: 15px;    position: absolute;
     right: 0;float: right">menu</button>
             <span class="mdc-top-app-bar__title my-font" style="line-height: 63px;padding-left: 23px;">
-                    <a href="{{ route('home') }}"><img class="logo" src="{{ asset('/images/download.png') }}" alt="my site" style="margin-top: -7px"></a>
+                    <a href="{{ route('home') }}"><img class="logo" src="{{ asset('/images/download.png') }}" alt="my site" style="width: 90px;
+    height: 40px;;margin-top: -7px"></a>
                 </span>
         </div>
         <section class="mdc-top-app-bar__section section-search" style="padding-right: 30px;">
@@ -74,7 +75,7 @@
                 data-mdc-ripple-is-unbounded="true" style="color: black;    position: relative;
     top: 11px;">close</button>
         <span class="mdc-top-app-bar__title my-font" style="padding-left: 23px;">
-                    <a href="#"><img src="{{ asset('/images/download.png') }}" alt="my site"></a>
+                    <a href="#"><img style="width: 90px" src="{{ asset('/images/download.png') }}" alt="pasbede"></a>
                 </span>
         <hr>
     </div>

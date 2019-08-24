@@ -8,7 +8,7 @@
 @section('content')
     @if(auth()->check())
         @if(auth()->user()->active == 1)
-        <form action="{{ route('createAdvertising') }}" method="POST">
+        <form action="{{ route('createAdvertising') }}" method="POST" enctype="multipart/form-data">
             <div class="container" dir="rtl">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="float: right;direction: rtl;height: auto;padding: 30px;display: inline-block;background-color: white;border: 1px solid #e0e0e0;box-shadow: 0px 0px 8px #e0e0e0">
                     <h2 class="bold-font">ثبت رایگان آگهی</h2>

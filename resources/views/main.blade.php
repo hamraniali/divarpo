@@ -37,8 +37,9 @@
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/css/mobile.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/css/tablet.css') }}"/>
+    <link rel="icon" type="image/ico" href="{{ asset('/images/download.png') }}" />
     @yield('style')
-    <title>نام سایت | @yield('title')</title>
+    <title>@yield('title') | PasBede</title>
 </head>
 <body>
     @include('fixes.header')

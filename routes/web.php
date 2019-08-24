@@ -23,4 +23,7 @@ Route::post('/checkcode' , 'VerificationController@check')->name('checkcode');
 Route::post('/signin' , 'Auth\LoginController@signin')->name('signin');
 Route::get('/forget' , 'Auth\ForgotPasswordController@show')->name('forget');
 Route::post('/sendpass' , 'Auth\ForgotPasswordController@sendpass')->name('sendpass');
+//Route::get('test' , function() {
+//    return redirect(route('home'))->with(['status' => 'success' , 'message' => 'آگهی شما ثبت شد و بعد از تایید نمایش داده می شود']);
+//});
 

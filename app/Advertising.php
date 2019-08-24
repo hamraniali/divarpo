@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Advertising extends Model
 {
     protected $fillable = [
-      'category_id','user_id','name','description','images','price','city_id','district_id','active'
+      'category_id','user_id','name','description','images','price','city_id','district_id','active', 'status'
+    ];
+
+    protected $casts = [
+      'images' => 'array'
     ];
 
     public function scopeActive($query)

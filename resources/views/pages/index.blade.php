@@ -10,6 +10,12 @@
 {{--@endsection--}}
 @section('content')
     <div class="container">
+        @if(session('status') == 'success')
+            <div style="text-align: center;height: auto;background-color: #d4edda; line-height: 51px;padding: 10px;color: #155724;border-radius: 150rem;
+    border-color: #ffeeba;">
+                <span>{{ session('message') }}</span>
+            </div>
+        @endif
         <form action="{{ route('search') }}">
             <div class="box-filter-search">
                 @csrf
@@ -86,7 +92,7 @@
                         <div class="card-body box-agahi box-agahi-title">
                             <a href="{{ route('advertising' , ['id' => $advertising->id]) }}">
                                 <div style="width: 100%;height: 150px;display: inline-flex;background-color: #e0e0e0">
-                                    <div style="width: 50%;height: 100%;border-bottom: solid 1px #e0e0e0;z-index: 4;background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg')">
+                                    <div style="width: 50%;height: 100%;border-bottom: solid 1px #e0e0e0;z-index: 1;background-image: url({{ $advertising->images['thump'] }})">
                                     </div>
                                     <i class="material-icons" style="position: absolute;
     font-size: 40px;
@@ -118,9 +124,10 @@
                             </a>
                             <div style="width: 100%;height: 47px;direction: rtl;padding: 7px;line-height: 37px">
                                 <span>قیمت : </span><span style="font-weight: bold;color: #ef5661">{{ $advertising->price }} ریال </span>
-                                <button class="material-icons mdc-icon-button" style="float: left;    position: relative;
-    bottom: 7px;" data-mdc-ripple-is-unbounded="true">bookmark_border
-                                </button>
+                                <span style="float: left;font-size: 12px;color: #9e9e9e;left: 10px;font-weight: bold;    position: relative;
+                                ;" data-mdc-ripple-is-unbounded="true">
+                                    {{ $advertising->status }}
+                                </span>
                             </div>
                         </div>
                     </div>

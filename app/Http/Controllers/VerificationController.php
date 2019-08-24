@@ -29,7 +29,7 @@ class VerificationController extends Controller
             try{
                 $api = new \Kavenegar\KavenegarApi( "426E58337A5271456E5A716262314F576B4A74434E714F6D4D34757A386D3033" );
                 $sender = "1000596446";
-                $message = "کد فعالسازی سایت :‌" . $code;
+                $message = 'کد فعالسازی "پس بده": ‌' . $code;
                 $receptor = $user->phone;
                 $result = $api->Send($sender,$receptor,$message);
                 if($result){
