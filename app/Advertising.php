@@ -42,6 +42,9 @@ class Advertising extends Model
                     break;
             }
         }
+        if (isset($inputs['pic']) && !empty($inputs['pic'])) {
+            $query->where('images' , '!=' , '[]');
+        }
         $query->where('active' , 1);
 
     }

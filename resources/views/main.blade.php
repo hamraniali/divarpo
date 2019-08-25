@@ -50,6 +50,7 @@
     <div class="content">
         @yield('content')
     </div>
+        @include('fixes.footer')
 
 </body>
 <script src="{{ asset('/js/material-components-web.min.js') }}"></script>
@@ -145,8 +146,5 @@
         distric_city.setAttribute('value' , id);
     }
 </script>
-{{--<script type="text/javascript">--}}
-    {{--const switchControl = new mdc.switchControl.MDCSwitch(document.querySelector('.mdc-switch'));--}}
-{{--</script>--}}
 @yield('script')
 </html>

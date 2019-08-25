@@ -279,3 +279,81 @@ input:focus, textarea:focus, select:focus,button:focus{
 .owl-next i{
 	font-size: 40px!important;
 }
+.footer{
+	margin-top: 30px;
+	text-align: center;width: 100%;height: auto;padding: 10px;position:relative;bottom: 0;background-color: #e0e0e0;
+	display: none !important;
+}
+.bottom-drawer{
+	position: absolute;
+	bottom: 0;
+	padding: 10px;
+	background: #e0e0e0;
+	height: 52px;
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+}
+.switch-input {
+	display: none;
+}
+.switch-label {
+	position: relative;
+	display: inline-block;
+	min-width: 112px;
+	cursor: pointer;
+	font-weight: 500;
+	text-align: left;
+	margin: -7px;
+	padding: 16px 0 16px 44px;
+	position: relative!important;
+	top: 1px!important;
+	left: 20px!important;
+}
+.switch-label:before, .switch-label:after {
+	content: "";
+	position: absolute;
+	margin: 0;
+	outline: 0;
+	top: 50%;
+	-ms-transform: translate(0, -50%);
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.switch-label:before {
+	left: 1px;
+	width: 34px;
+	height: 20px;
+	background-color: #e0e0e0;
+	border-radius: 150rem;
+}
+.switch-label:after {
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background-color: rgb(133, 100, 4);
+	border-radius: 150rem;
+}
+.switch-label .toggle--on {
+	display: none;
+}
+.switch-label .toggle--off {
+	display: inline-block;
+}
+.switch-input:checked + .switch-label:before {
+	background-color: #e0e0e0;
+}
+.switch-input:checked + .switch-label:after {
+	background-color: rgb(0, 191, 214);
+	-ms-transform: translate(80%, -50%);
+	-webkit-transform: translate(80%, -50%);
+	transform: translate(80%, -50%);
+}
+.switch-input:checked + .switch-label .toggle--on {
+	display: inline-block;
+}
+.switch-input:checked + .switch-label .toggle--off {
+	display: none;
+}

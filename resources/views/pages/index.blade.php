@@ -65,15 +65,8 @@
     <div class="container">
 
         <div class="box-filter my-font">
-            <div class="mdc-switch mdc-switch--disabled" style="margin-top: 9px;margin-left: 10px">
-                <div class="mdc-switch__track"></div>
-                <div class="mdc-switch__thumb-underlay">
-                    <div class="mdc-switch__thumb">
-                        <input type="checkbox" id="another-basic-switch" class="mdc-switch__native-control" role="switch" disabled>
-                    </div>
-                </div>
-            </div>
-            <label for="another-basic-switch" style="margin-left: 10px;">عکس دار</label>
+            <input type="checkbox" id="id-name--1" name="pic" class="switch-input" onchange="this.form.submit()">
+            <label for="id-name--1" class="switch-label" style="font-size: 13px;color: #9e9e9e;font-weight: bold!important;position: relative;top: -21px"><span class="toggle--on">بدون عکس</span><span class="toggle--off">عکس دار</span></label>
             <select name="filter" id="fliter" class="filter-select" onchange="this.form.submit()">
                 <option value="newest" {{ isset($_GET['filter']) ? $_GET['filter'] == 'newest' ? 'selected' : '' : 'selected' }}>جدیدترین</option>
                 <option value="oldest" {{ isset($_GET['filter']) ? $_GET['filter'] == 'oldest' ? 'selected' : '' : '' }}>قدیمی ترین</option>
@@ -234,5 +227,8 @@
             const distric_city0 = document.querySelector('.distric_city0');
             distric_city0.setAttribute('value' , id);
         }
+    </script>
+    <script type="text/javascript">
+        const switchControl = new mdc.switchControl.MDCSwitch(document.querySelector('.mdc-switch'));
     </script>
 @endsection

@@ -53,14 +53,14 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="btn-search btn-ripple mdc-ripple-surface">
-                        <button type="submit" class="material-icons red-color-back" data-mdc-ripple-is-unbounded="true" style="color: white!important;border-radius: 30px;border: none!important;height: 100%;width: 100%">search</button>
+                    <div class="btn-search btn-ripple mdc-ripple-surface" style="width: 100px!important;background-color: rgb(133, 100, 4)!important;box-shadow: -3px 0 8px rgb(133, 100, 4)">
+                        <button type="submit" class="material-icons" data-mdc-ripple-is-unbounded="true" style="background-color: rgb(133, 100, 4);color: white!important;border-radius: 30px;border: none!important;height: 100%;width: 100%">search</button>
                     </div>
                 </div>
             </form>
         </section>
 
-        <a href="{{ route('createad') }}" class="my-font blue-color-back btn-ripple mdc-ripple-surface btn-sabt my-font bold-font desk-add blue-shadow" style="float: left">ثبت رایگان آگهی</a>
+        <a href="{{ route('createad') }}" class="my-font blue-color-back btn-ripple mdc-ripple-surface btn-sabt my-font bold-font desk-add blue-shadow" style="float: left">ثبت رایگان آگهی<i class="material-icons" style="color: white;position: relative;top: 9px;right: 4px">add</i></a>
         @yield('head_left_icon')
     </div>
 </header>
@@ -111,7 +111,10 @@
                     <span class="mdc-list-item__text new-a">ثبت نام</span>
                 </a>
             @endif
-
+            <div class="bottom-drawer my-font">
+                طراحی و برنامه نویسی
+                <span style="font-weight: bold;color: rgb(133, 100, 4)">ali.hamrani80@gmail.com</span>
+            </div>
         </nav>
     </div>
 </aside>
