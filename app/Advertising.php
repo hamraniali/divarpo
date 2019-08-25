@@ -32,6 +32,16 @@ class Advertising extends Model
 
             $query->where('category_id' , $inputs['category']);
         }
+        if (isset($inputs['filter']) && !empty($inputs['filter'])) {
+            switch ($inputs['filter']) {
+                case "newest":
+                    $query->latest();
+                    break;
+                case "oldest":
+                    $query->oldest();
+                    break;
+            }
+        }
         $query->where('active' , 1);
 
     }

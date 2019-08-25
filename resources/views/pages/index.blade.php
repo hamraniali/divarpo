@@ -58,7 +58,7 @@
                     <button type="submit" style="width: 100%;height: 100%;color: white;font-size: 16px;border: none;border-radius: 150rem" class="blue-shadow blue-color-back my-font btn-ripple mdc-ripple-surface">ثبت فیلتر</button>
                 </div>
             </div>
-        </form>
+
 
     </div>
     <br class="space-mob">
@@ -74,12 +74,11 @@
                 </div>
             </div>
             <label for="another-basic-switch" style="margin-left: 10px;">عکس دار</label>
-            <select name="filter" id="fliter" class="filter-select">
-                <option value="" selected>جدیدترین</option>
-                <option value="">جدیدترین</option>
-                <option value="">جدیدترین</option>
-                <option value="">جدیدترین</option>
+            <select name="filter" id="fliter" class="filter-select" onchange="this.form.submit()">
+                <option value="newest" {{ isset($_GET['filter']) ? $_GET['filter'] == 'newest' ? 'selected' : '' : 'selected' }}>جدیدترین</option>
+                <option value="oldest" {{ isset($_GET['filter']) ? $_GET['filter'] == 'oldest' ? 'selected' : '' : '' }}>قدیمی ترین</option>
             </select>
+            </form>
         </div>
     </div>
     <div class="container" style="padding: 0;
